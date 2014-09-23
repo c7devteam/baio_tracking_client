@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3000/api/v1/events
+    body:
+      encoding: UTF-8
+      string: '{"browser":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/37.0.2062.120 Safari/537.36","name":"page_view","owner_id":"1","referrer":"www.google.lv","session_id":"some_string","tags":["tag1","tag2"]}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Etag:
+      - '"3644a684f98ea8fe223c713b77189a77"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Meta-Request-Version:
+      - 0.3.4
+      X-Request-Id:
+      - a7fd5daa-3f26-478f-970f-d62f3b12fdcb
+      X-Runtime:
+      - '0.005585'
+      Content-Length:
+      - '3'
+    body:
+      encoding: UTF-8
+      string: '200'
+    http_version: 
+  recorded_at: Tue, 23 Sep 2014 12:30:09 GMT
+recorded_with: VCR 2.9.3

@@ -7,9 +7,15 @@ module BaioTrackingClient
   extend Configuration
 
   class << self
+    attr_accessor(:http_client)
+
     def client
       configure
-      BaioTrackingClient::Client.new
+      @http_client ||= BaioTrackingClient::Client.new
+    end
+
+    def post_event(params:)
+      client.post_event(params: params)
     end
   end
 end
