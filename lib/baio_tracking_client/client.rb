@@ -19,8 +19,15 @@ module BaioTrackingClient
       post(path: '/api/v1/events', params: params)
     end
 
+    def in_parallel
+     connection.in_parallel do
+        yield
+      end
+    end
+
+
     def connection
-      @connection ||= Faraday.new(url: "#{base_url}:#{port.to_s}") do |conn|
+      @connection ||= Faraday.new(url: "#{base_url}:#{port.to_s}", parallel_manager: Typhoeus::Hydra.new(max_concurrency: 10)) do |conn|
         conn.request :basic_auth, username, password
         conn.request :json
         conn.adapter :typhoeus

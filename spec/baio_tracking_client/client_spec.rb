@@ -16,9 +16,21 @@ RSpec.describe BaioTrackingClient::Client do
   before do
     BaioTrackingClient.configure do |config|
       config.base_url = 'localhost'
-      config.port = '3000'
+      config.port = '3001'
       config.username = 'username'
       config.password = 'password'
+    end
+  end
+
+  describe 'paralel requests' do
+    it 'accept' do
+      VCR.use_cassette('parallel_post_event') do
+        described_class.new.in_parallel do
+          expect(described_class.new.post_event(params: params).status).to eq(200)
+          expect(described_class.new.post_event(params: params).status).to eq(200)
+          expect(described_class.new.post_event(params: params).status).to eq(200)
+        end
+      end
     end
   end
 

@@ -2,11 +2,11 @@
 http_interactions:
 - request:
     method: post
-    uri: http://localhost:3000/api/v1/events
+    uri: http://localhost:3001/api/v1/events
     body:
       encoding: UTF-8
       string: '{"browser":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/37.0.2062.120 Safari/537.36","name":"page_view","owner_id":"1","referrer":"www.google.lv","session_id":"some_string","tags":["tag1","tag2"]}'
+        like Gecko) Chrome/37.0.2062.120 Safari/537.36","name":"page_view","owner_id":"1","referrer":"www.google.lv","session_id":"some_string","url":"/system/packages","tags":["tag1","tag2"]}'
     headers:
       User-Agent:
       - Faraday v0.9.0
@@ -28,16 +28,16 @@ http_interactions:
       X-Meta-Request-Version:
       - 0.3.4
       X-Request-Id:
-      - a7fd5daa-3f26-478f-970f-d62f3b12fdcb
+      - 9b5616ba-ba93-4f38-a4f5-6b5550051aef
       X-Runtime:
-      - '0.005585'
+      - '0.003134'
       Content-Length:
       - '3'
     body:
       encoding: UTF-8
       string: '200'
     http_version: 
-  recorded_at: Tue, 23 Sep 2014 12:30:09 GMT
+  recorded_at: Wed, 24 Sep 2014 13:49:50 GMT
 - request:
     method: post
     uri: http://localhost:3001/api/v1/events
@@ -66,9 +66,47 @@ http_interactions:
       X-Meta-Request-Version:
       - 0.3.4
       X-Request-Id:
-      - d8ed6c6a-6434-418e-a2ab-a3cf5a4cf858
+      - 8dd26519-e6f4-49db-8d35-4da261db0af0
       X-Runtime:
-      - '0.179947'
+      - '0.002824'
+      Content-Length:
+      - '3'
+    body:
+      encoding: UTF-8
+      string: '200'
+    http_version: 
+  recorded_at: Wed, 24 Sep 2014 13:49:50 GMT
+- request:
+    method: post
+    uri: http://localhost:3001/api/v1/events
+    body:
+      encoding: UTF-8
+      string: '{"browser":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/37.0.2062.120 Safari/537.36","name":"page_view","owner_id":"1","referrer":"www.google.lv","session_id":"some_string","url":"/system/packages","tags":["tag1","tag2"]}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Etag:
+      - '"3644a684f98ea8fe223c713b77189a77"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Meta-Request-Version:
+      - 0.3.4
+      X-Request-Id:
+      - 500577b8-f32f-4ef1-8ba8-43bc4c3d8a5e
+      X-Runtime:
+      - '0.002482'
       Content-Length:
       - '3'
     body:
