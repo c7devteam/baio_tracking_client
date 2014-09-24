@@ -37,6 +37,8 @@ module BaioTrackingClient
 
     def post(path:, params: {})
       connection.post(path, params)
+    rescue Faraday::TimeoutError
+      'failed to conect tracking server'
     end
 
     def get_config_value(key)
