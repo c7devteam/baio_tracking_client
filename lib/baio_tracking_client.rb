@@ -14,6 +14,12 @@ module BaioTrackingClient
       @http_client ||= BaioTrackingClient::Client.new
     end
 
+    def in_parallel
+      client.in_parallel do
+        yield
+      end
+    end
+
     def post_event(params:)
       client.post_event(params: params)
     end
