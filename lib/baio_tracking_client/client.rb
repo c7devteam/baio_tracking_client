@@ -43,7 +43,12 @@ module BaioTrackingClient
     private
 
     def post(path:, params: {})
-      connection.post(path, params)
+      connection.post do |req|
+        req.url(path)
+        req.params = params
+        req.options.timeout = 2
+        req.options.open_timeout = 2
+      end
     rescue Faraday::TimeoutError
       'failed to conect tracking server'
     end

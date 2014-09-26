@@ -18,7 +18,7 @@ RSpec.describe BaioTrackingClient::Client do
       config.base_url = 'localhost'
       config.port = '3001'
       config.username = 'username'
-      config.password = 'password'
+      config.password = '9a5d29ae25d52e2d'
     end
   end
 

@@ -2,18 +2,17 @@
 http_interactions:
 - request:
     method: post
-    uri: http://localhost:3001/api/v1/events
+    uri: http://localhost:3001/api/v1/events?browser=Mozilla/5.0%20(X11%3B%20Linux%20x86_64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/37.0.2062.120%20Safari/537.36&name=page_view&owner_id=1&referrer=www.google.lv&session_id=some_string&tags%5B0%5D=tag1&tags%5B1%5D=tag2&url=/system/packages
     body:
       encoding: UTF-8
-      string: '{"browser":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/37.0.2062.120 Safari/537.36","name":"page_view","owner_id":"1","referrer":"www.google.lv","session_id":"some_string","url":"/system/packages","tags":["tag1","tag2"]}'
+      string: ''
     headers:
       User-Agent:
       - Faraday v0.9.0
       Authorization:
-      - Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-      Content-Type:
-      - application/json
+      - Basic dXNlcm5hbWU6OWE1ZDI5YWUyNWQ1MmUyZA==
+      Content-Length:
+      - '0'
   response:
     status:
       code: 200
@@ -28,30 +27,29 @@ http_interactions:
       X-Meta-Request-Version:
       - 0.3.4
       X-Request-Id:
-      - 9b5616ba-ba93-4f38-a4f5-6b5550051aef
+      - ddf08486-5704-4efd-bfc8-ac5c6f9aef3f
       X-Runtime:
-      - '0.003134'
+      - '0.003215'
       Content-Length:
       - '3'
     body:
       encoding: UTF-8
       string: '200'
     http_version: 
-  recorded_at: Wed, 24 Sep 2014 13:49:50 GMT
+  recorded_at: Fri, 26 Sep 2014 10:56:28 GMT
 - request:
     method: post
-    uri: http://localhost:3001/api/v1/events
+    uri: http://localhost:3001/api/v1/events?browser=Mozilla/5.0%20(X11%3B%20Linux%20x86_64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/37.0.2062.120%20Safari/537.36&name=page_view&owner_id=1&referrer=www.google.lv&session_id=some_string&tags%5B0%5D=tag1&tags%5B1%5D=tag2&url=/system/packages
     body:
       encoding: UTF-8
-      string: '{"browser":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/37.0.2062.120 Safari/537.36","name":"page_view","owner_id":"1","referrer":"www.google.lv","session_id":"some_string","url":"/system/packages","tags":["tag1","tag2"]}'
+      string: ''
     headers:
       User-Agent:
       - Faraday v0.9.0
       Authorization:
-      - Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-      Content-Type:
-      - application/json
+      - Basic dXNlcm5hbWU6OWE1ZDI5YWUyNWQ1MmUyZA==
+      Content-Length:
+      - '0'
   response:
     status:
       code: 200
@@ -66,30 +64,29 @@ http_interactions:
       X-Meta-Request-Version:
       - 0.3.4
       X-Request-Id:
-      - 8dd26519-e6f4-49db-8d35-4da261db0af0
+      - cdfeec88-87e5-4dbf-bd14-e478cad42b9a
       X-Runtime:
-      - '0.002824'
+      - '0.002972'
       Content-Length:
       - '3'
     body:
       encoding: UTF-8
       string: '200'
     http_version: 
-  recorded_at: Wed, 24 Sep 2014 13:49:50 GMT
+  recorded_at: Fri, 26 Sep 2014 10:56:28 GMT
 - request:
     method: post
-    uri: http://localhost:3001/api/v1/events
+    uri: http://localhost:3001/api/v1/events?browser=Mozilla/5.0%20(X11%3B%20Linux%20x86_64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/37.0.2062.120%20Safari/537.36&name=page_view&owner_id=1&referrer=www.google.lv&session_id=some_string&tags%5B0%5D=tag1&tags%5B1%5D=tag2&url=/system/packages
     body:
       encoding: UTF-8
-      string: '{"browser":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/37.0.2062.120 Safari/537.36","name":"page_view","owner_id":"1","referrer":"www.google.lv","session_id":"some_string","url":"/system/packages","tags":["tag1","tag2"]}'
+      string: ''
     headers:
       User-Agent:
       - Faraday v0.9.0
       Authorization:
-      - Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-      Content-Type:
-      - application/json
+      - Basic dXNlcm5hbWU6OWE1ZDI5YWUyNWQ1MmUyZA==
+      Content-Length:
+      - '0'
   response:
     status:
       code: 200
@@ -104,14 +101,14 @@ http_interactions:
       X-Meta-Request-Version:
       - 0.3.4
       X-Request-Id:
-      - 500577b8-f32f-4ef1-8ba8-43bc4c3d8a5e
+      - eb37e553-91da-43c9-9ddc-fdd1f79ea728
       X-Runtime:
-      - '0.002482'
+      - '0.003052'
       Content-Length:
       - '3'
     body:
       encoding: UTF-8
       string: '200'
     http_version: 
-  recorded_at: Wed, 24 Sep 2014 13:49:50 GMT
+  recorded_at: Fri, 26 Sep 2014 10:56:28 GMT
 recorded_with: VCR 2.9.3

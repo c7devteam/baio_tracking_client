@@ -2,18 +2,17 @@
 http_interactions:
 - request:
     method: post
-    uri: http://localhost:3000/api/v1/events
+    uri: http://localhost:3001/api/v1/events?browser=Mozilla/5.0%20(X11%3B%20Linux%20x86_64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/37.0.2062.120%20Safari/537.36&name=page_view&owner_id=1&referrer=www.google.lv&session_id=some_string&tags%5B0%5D=tag1&tags%5B1%5D=tag2&url=/system/packages
     body:
       encoding: UTF-8
-      string: '{"browser":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/37.0.2062.120 Safari/537.36","name":"page_view","owner_id":"1","referrer":"www.google.lv","session_id":"some_string","tags":["tag1","tag2"]}'
+      string: ''
     headers:
       User-Agent:
       - Faraday v0.9.0
       Authorization:
-      - Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-      Content-Type:
-      - application/json
+      - Basic dXNlcm5hbWU6OWE1ZDI5YWUyNWQ1MmUyZA==
+      Content-Length:
+      - '0'
   response:
     status:
       code: 200
@@ -28,52 +27,14 @@ http_interactions:
       X-Meta-Request-Version:
       - 0.3.4
       X-Request-Id:
-      - a7fd5daa-3f26-478f-970f-d62f3b12fdcb
+      - eaa12d53-c5a7-4f3b-99d8-8fb8e0120af7
       X-Runtime:
-      - '0.005585'
+      - '0.017436'
       Content-Length:
       - '3'
     body:
       encoding: UTF-8
       string: '200'
     http_version: 
-  recorded_at: Tue, 23 Sep 2014 12:30:09 GMT
-- request:
-    method: post
-    uri: http://localhost:3001/api/v1/events
-    body:
-      encoding: UTF-8
-      string: '{"browser":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/37.0.2062.120 Safari/537.36","name":"page_view","owner_id":"1","referrer":"www.google.lv","session_id":"some_string","url":"/system/packages","tags":["tag1","tag2"]}'
-    headers:
-      User-Agent:
-      - Faraday v0.9.0
-      Authorization:
-      - Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-      Content-Type:
-      - application/json
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json
-      Etag:
-      - '"3644a684f98ea8fe223c713b77189a77"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Meta-Request-Version:
-      - 0.3.4
-      X-Request-Id:
-      - d8ed6c6a-6434-418e-a2ab-a3cf5a4cf858
-      X-Runtime:
-      - '0.179947'
-      Content-Length:
-      - '3'
-    body:
-      encoding: UTF-8
-      string: '200'
-    http_version: 
-  recorded_at: Wed, 24 Sep 2014 13:49:50 GMT
+  recorded_at: Fri, 26 Sep 2014 10:56:28 GMT
 recorded_with: VCR 2.9.3
