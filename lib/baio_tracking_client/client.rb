@@ -60,8 +60,6 @@ module BaioTrackingClient
         req.options.timeout = 2
         req.options.open_timeout = 2
       end
-    rescue Faraday::TimeoutError
-      'failed to conect tracking server'
     end
 
     def get(path:, params: {})
@@ -71,8 +69,6 @@ module BaioTrackingClient
         req.options.timeout = 2
         req.options.open_timeout = 2
       end
-    rescue Faraday::TimeoutError
-      'failed to conect tracking server'
     end
 
     def get_config_value(key)

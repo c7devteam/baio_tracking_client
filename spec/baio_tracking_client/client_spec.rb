@@ -34,6 +34,17 @@ RSpec.describe BaioTrackingClient::Client do
     end
   end
 
+  describe "TimeoutError" do
+    it "reurn OpenStruct " do
+      VCR.use_cassette('timeout_response') do
+        resp = described_class.new.post_event(params: params)
+        expect(resp.status).to eql(0)
+        expect(resp.success?).to eql(false)
+        expect(resp.body).to eql('')
+      end
+    end
+  end
+
   describe '#post' do
     it 'post data' do
       VCR.use_cassette('post_event') do

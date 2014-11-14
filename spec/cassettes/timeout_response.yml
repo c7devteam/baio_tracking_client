@@ -1,0 +1,26 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3001/api/v1/events?browser=Mozilla/5.0%20(X11%3B%20Linux%20x86_64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/37.0.2062.120%20Safari/537.36&name=page_view&owner_id=1&referrer=www.google.lv&session_id=some_string&tags%5B0%5D=tag1&tags%5B1%5D=tag2&url=/system/packages
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Basic dXNlcm5hbWU6OWE1ZDI5YWUyNWQ1MmUyZA==
+      Content-Length:
+      - '0'
+  response:
+    status:
+      code: 0
+      message: 
+    headers: {}
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Fri, 14 Nov 2014 12:25:21 GMT
+recorded_with: VCR 2.9.3
