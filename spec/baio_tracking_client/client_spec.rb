@@ -36,12 +36,11 @@ RSpec.describe BaioTrackingClient::Client do
 
   describe "TimeoutError" do
     it "reurn OpenStruct " do
-      VCR.use_cassette('timeout_response') do
-        resp = described_class.new.post_event(params: params)
-        expect(resp.status).to eql(0)
-        expect(resp.success?).to eql(false)
-        expect(resp.body).to eql('')
-      end
+      allow_any_instance_of(Faraday::Connection).to receive(:post) { raise Faraday::TimeoutError}
+      resp = described_class.new.post_event(params: params)
+      expect(resp.status).to eql(0)
+      expect(resp.success?).to eql(false)
+      expect(resp.body).to eql('failed to conect tracking server')
     end
   end
 

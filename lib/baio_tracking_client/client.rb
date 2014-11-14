@@ -2,6 +2,7 @@ require 'faraday'
 require 'typhoeus'
 require 'typhoeus/adapters/faraday'
 require 'faraday_middleware'
+require 'ostruct'
 
 module BaioTrackingClient
   class Client
@@ -60,6 +61,8 @@ module BaioTrackingClient
         req.options.timeout = 2
         req.options.open_timeout = 2
       end
+    rescue Faraday::TimeoutError
+      failed_response('failed to conect tracking server')
     end
 
     def get(path:, params: {})
@@ -69,10 +72,16 @@ module BaioTrackingClient
         req.options.timeout = 2
         req.options.open_timeout = 2
       end
+    rescue Faraday::TimeoutError
+      failed_response('failed to conect tracking server')
     end
 
     def get_config_value(key)
       BaioTrackingClient.send(key) || raise(BaioTrackingClient::NoConfigurationError, "Not set #{key}")
+    end
+
+    def failed_response(message)
+      OpenStruct.new(success?: false, body: message, status: 0)
     end
   end
 end
