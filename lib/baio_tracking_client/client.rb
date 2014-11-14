@@ -19,6 +19,17 @@ module BaioTrackingClient
       post(path: '/api/v1/events', params: params)
     end
 
+    def get_event(event:, params: )
+      path = {
+        events: '/api/v1/events',
+        owner_activities: '/api/v1/owners/owner_activities',
+        online_list: '/api/v1/owners/online_list',
+        online: "/api/v1/owners/#{params[:owner_id]}/online"
+      }[event]
+
+      get(path: path, params: params)
+    end
+
     def in_parallel
      connection.in_parallel do
         yield
@@ -44,6 +55,17 @@ module BaioTrackingClient
 
     def post(path:, params: {})
       connection.post do |req|
+        req.url(path)
+        req.params = params
+        req.options.timeout = 2
+        req.options.open_timeout = 2
+      end
+    rescue Faraday::TimeoutError
+      'failed to conect tracking server'
+    end
+
+    def get(path:, params: {})
+      connection.get do |req|
         req.url(path)
         req.params = params
         req.options.timeout = 2

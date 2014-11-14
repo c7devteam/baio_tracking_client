@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3001/api/v1/owners/owner_activities?owner_ids%5B0%5D=account_1&owner_types%5B0%5D=admin
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Basic dXNlcm5hbWU6OWE1ZDI5YWUyNWQ1MmUyZA==
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Etag:
+      - '"de9258bd1531490fd22c1cd8a073e268"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Meta-Request-Version:
+      - 0.3.4
+      X-Request-Id:
+      - a79d127b-588b-45dc-a86e-cd861f3869a0
+      X-Runtime:
+      - '0.029641'
+      Content-Length:
+      - '16613'
+    body:
+      encoding: UTF-8
+      string: '[{}]'
+    http_version: 
+  recorded_at: Fri, 14 Nov 2014 10:16:06 GMT
+recorded_with: VCR 2.9.3

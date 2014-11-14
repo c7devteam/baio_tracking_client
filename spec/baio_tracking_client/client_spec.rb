@@ -42,6 +42,18 @@ RSpec.describe BaioTrackingClient::Client do
     end
   end
 
+  describe "#get" do
+    context "owner_activities" do
+      it "does something" do
+        event = :owner_activities
+        params =  { owner_ids: ["account_1"], owner_types: ["admin"] }
+        VCR.use_cassette('get/owner_activities') do
+          expect(described_class.new.get_event(event: event, params: params).status).to eq(200)
+        end
+      end
+    end  
+  end
+
   describe 'initialize' do
     context 'saccsses' do
       BaioTrackingClient::Configuration::ATTRIBUTES.map do |key|
