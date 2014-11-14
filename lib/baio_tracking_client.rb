@@ -23,5 +23,9 @@ module BaioTrackingClient
     def post_event(params:)
       client.post_event(params: params)
     end
+
+    def get_event(event:, params:)
+      client.get_event(event: event, params: params)
+    end
   end
 end

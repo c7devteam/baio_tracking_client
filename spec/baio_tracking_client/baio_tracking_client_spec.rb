@@ -24,5 +24,14 @@ RSpec.describe BaioTrackingClient do
         expect(described_class.client).to be_kind_of(BaioTrackingClient::Client)
       end
     end
+
+    describe "respond to methods" do
+      [:post_event, :get_event].map do |meth|
+        it "respond to #{meth}" do
+          expect(described_class.respond_to?(meth)).to eql(true)
+        end
+      end
+    end
+
   end
 end

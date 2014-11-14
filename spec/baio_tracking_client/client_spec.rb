@@ -51,7 +51,13 @@ RSpec.describe BaioTrackingClient::Client do
           expect(described_class.new.get_event(event: event, params: params).status).to eq(200)
         end
       end
-    end  
+    end
+
+    context 'when event not definite' do
+      it "raise error" do
+        expect{described_class.new.get_event(event: :owner, params: params) }.to raise_error(NotImplementedError)
+      end  
+    end
   end
 
   describe 'initialize' do

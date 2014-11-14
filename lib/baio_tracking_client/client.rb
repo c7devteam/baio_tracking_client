@@ -25,7 +25,7 @@ module BaioTrackingClient
         owner_activities: '/api/v1/owners/owner_activities',
         online_list: '/api/v1/owners/online_list',
         online: "/api/v1/owners/#{params[:owner_id]}/online"
-      }[event]
+      }[event] || raise(NotImplementedError, "event not definite #{event}")
 
       get(path: path, params: params)
     end
